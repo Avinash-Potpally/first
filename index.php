@@ -8,7 +8,9 @@ p    {color: red;}
 </style>
 </head>
 <body>
-
-<h1>Hello Azure Users..!</h1>
+<p>
+<h1>Hello Users..!</h1>
+  <a href='./register.php'>Let's Go</a>
+  </p>
 </body>
 </html>
