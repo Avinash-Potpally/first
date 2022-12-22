@@ -6,7 +6,7 @@
 trigger: none
 parameters:
   - name: branch
-    default: false
+    default: none
     displayName: Name of the branch to be deployed
     type: string
 variables:
