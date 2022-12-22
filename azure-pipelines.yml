@@ -7,6 +7,9 @@ trigger:
 - master
 parameters:
   - name: branch
+    default: false
+    displayName: Name of the branch to be deployed
+    type: string
 variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '718ff221-6e55-4c06-8072-20a820806ead'
