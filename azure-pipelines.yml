@@ -3,8 +3,7 @@
 # Add steps that run tests and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/php
 
-trigger:
-- master
+trigger: none
 parameters:
   - name: branch
     default: false
@@ -25,7 +24,17 @@ variables:
 
   # Root folder under which your composer.json file is available.
   rootFolder: $(System.DefaultWorkingDirectory)
-
+  
+  branch_name: ${{parameters.branch}}
+  
+resources:
+  repositories:
+    - repository: first
+      type: github
+      ref: 'refs/heads/$(branch_name)'
+      name: avin/checkout
+      endpoint: 'avin0001'
+      
 stages:
 - stage: Build
   displayName: Build stage
@@ -36,6 +45,9 @@ stages:
     pool:
       name: Default
     steps:
+    - checkout: first
+      displayName: branch name is $(branch_name)
+      
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
