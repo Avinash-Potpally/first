@@ -33,7 +33,7 @@ resources:
       type: github
       ref: 'refs/heads/$(branch_name)'
       name: avin/checkout
-      endpoint: 'avin0001'
+      endpoint: 'first'
       
 stages:
 - stage: Build
