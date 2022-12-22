@@ -9,7 +9,7 @@ p    {color: red;}
 </head>
 <body>
 <p>
-<h1>Hello Users..!</h1>
+<h1>Azure Hello Users..!</h1>
   <a href='./register.php'>Let's Go</a>
   </p>
 </body>
