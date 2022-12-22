@@ -25,7 +25,16 @@ variables:
 
   # Root folder under which your composer.json file is available.
   rootFolder: $(System.DefaultWorkingDirectory)
-
+  branch_name: ${{parameters.branch}}
+  
+resources:
+  repositories:
+    - repository: first
+      type: github
+      ref: $(branch_name)
+      name: Avinash-Potpally/first
+      endpoint: 'github.com_Avinash-Potpally'
+      
 stages:
 - stage: Build
   displayName: Build stage
@@ -36,7 +45,7 @@ stages:
     pool:
       name: Default
     steps:
-    - checkout: Avinash-Potpally/first@(development)
+    - checkout: first
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
